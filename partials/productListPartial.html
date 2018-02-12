@@ -1,0 +1,30 @@
+<div ng-controller = "productListController">
+	<h2 class="page-header">Product List Table</h2>
+	<form ng-controller = "productInsertController" class="form-inline" style="margin-bottom: 20px;">
+		<div class="form-group">
+			<input class="form-control" type="text" ng-model="name">
+			<input class="form-control" type="text" ng-model="category">
+			<button class="btn btn-primary" ng-click="save()">Save record</button>
+		</div>
+	</form>
+	<table class="table table-striped">
+	<thead>
+		<th>S/N</th>
+		<th>Product Name</th>
+		<th>Product Category</th>
+		<th>Created on</th>
+		<th>Updated on</th>
+		<th>Edit Action</th>
+		<th>Delete Action</th>
+	</thead>
+	  <tr ng-repeat="product in products">
+	  	<td>{{ $index+1 }}</td>
+	    <td>{{ product.name }}</td>
+	    <td>{{ product.category }}</td>
+	    <td>{{ product.created_at }}</td>
+	    <td>{{ product.updated_at }}</td>
+	    <td><button class="btn btn-warning" value="{{ product.id }}" ng-click="edit($event)">Edit</button></td>
+	    <td><button class="btn btn-danger" value="{{ product.id }}" ng-click="delete($event)">Delete</button></td>
+	  </tr>
+	</table>
+</div>
