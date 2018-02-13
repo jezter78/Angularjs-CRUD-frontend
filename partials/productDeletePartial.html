@@ -1,4 +1,10 @@
 <div ng-controller="productDeleteController">
-	{{ product.name }}
-	<button ng-click="delete()">Confirm Delete</button>
+	<h2 class="page-header">Product Delete Confirmation</h2>
+	<div class="col-sm-6 col-sm-offset-3 well well-lg text-center">
+		<p>Are you sure that you want to delete the product<strong> {{ product.name }} ({{ product.category }})?</strong></p>
+	<div class="text-center">
+		<a href="./" class="btn btn-default">Cancel</a>
+		<button class="btn btn-danger" ng-click="delete()">Confirm Delete</button>
+	</div>	
+	</div>
 </div>
